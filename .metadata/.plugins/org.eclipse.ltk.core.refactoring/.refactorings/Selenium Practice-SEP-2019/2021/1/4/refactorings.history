@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.qa.Googlesuggestion&apos; to &apos;com.qa.GooglesuggestionXpath&apos;&#x0D;&#x0A;- Original project: &apos;Selenium Practice-SEP-2019&apos;&#x0D;&#x0A;- Original element: &apos;Selenium Practice-SEP-2019/src/com.qa.Googlesuggestion&apos;&#x0D;&#x0A;- Renamed element: &apos;Selenium Practice-SEP-2019/src/com.qa.GooglesuggestionXpath&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.qa.Googlesuggestion&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;com.qa.Googlesuggestion" name="com.qa.GooglesuggestionXpath" qualified="false" references="true" stamp="1611054868427" textual="false" version="1.0"/>
+</session>

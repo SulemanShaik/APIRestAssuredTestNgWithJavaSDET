@@ -1,0 +1,57 @@
+package com.qa.PersistentJava;
+
+
+
+public class String_Operations {
+
+	public static void main(String[] args) {
+
+		String str1="we are learning";
+		String str2="we are learning";
+		
+		//Compare two strings
+		
+		System.out.println(str1==str2);//do not use == use for only primitive data type
+		
+		System.out.println(str1.equals(str2));
+		
+		    //or
+		if(str1.equals(str2))
+			System.out.println("Both strings are equal");
+		
+		
+		//Substring
+		
+		System.out.println(str1.substring(5));  // it will cut the string index values
+		System.out.println(str1.substring(1,4));//it will display 1 to 4 index values
+		
+		//indexOf it will shows the index of the string or char
+		
+		System.out.println(str2.indexOf("are"));
+		System.out.println(str2.indexOf("g"));
+		
+		
+		//Replace it will replace the string
+		
+		String s = str1.replace("learning", "learning1");
+		System.out.println(s);
+		
+		String s1 = str1.replace("learning1", "learning");
+		System.out.println(s1);
+		
+	System.out.println(str1.replaceAll(" ", " _"));
+	
+	System.out.println(str1.charAt(5));
+	
+	//trim
+	
+	String s3= "    String and operators   ";
+	System.out.println(s3.trim());
+		
+		
+		
+		
+
+	}
+
+}

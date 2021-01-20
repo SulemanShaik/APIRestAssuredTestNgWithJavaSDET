@@ -1,0 +1,22 @@
+package com.qa.PersistentJava;
+
+
+
+public class String_Operations {
+
+	public static void main(String[] args) {
+
+		String str1="we are learning";
+		String str2="we are learning";
+		
+		//Compare two strings
+		
+		System.out.println(str1==str2);//do not use == use for only primitive data type
+		
+		
+		
+		
+		
+	}
+
+}

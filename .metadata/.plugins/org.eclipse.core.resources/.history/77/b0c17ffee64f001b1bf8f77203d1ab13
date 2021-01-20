@@ -1,0 +1,101 @@
+package PART0001.com.qa.handling_XpathFuntions_SDET;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+
+public class XpathAxes {
+
+	public static void main(String[] args) {
+
+		//Xpath Axes
+		
+		/*
+		 *  Self
+		 *  Parent 
+		 *  Child
+		 *   Ancestor
+		 *   Descendent 
+		 *   Following
+		 *   Following-sibiling
+		 *   Preceding
+		 *   Preceding-sibiling
+		 */
+		
+		
+		
+		
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\Drivers\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		
+		driver.get("https://money.rediff.com/gainers/bse/daily/groupa");
+		Assert.assertEquals(driver.getCurrentUrl(), "https://money.rediff.com/gainers/bse/daily/groupa");
+		
+		//Self - Select the current node
+		
+		String text=driver.findElement(By.xpath("//a[contains(text(),'Srikalahasthi Pipes')]/self::a")).getText();
+		System.out.println(text);  //Srikalahasthi Pipes
+		
+		//parent - Select the parent node of current node (always one)
+		text =driver.findElement(By.xpath("//a[contains(text(),'Srikalahasthi Pipes')]/parent::td")).getText();
+		System.out.println(text); //Srikalahasthi Pipes
+		
+		//child - Select all the children of the current node (one or many)
+		
+		List<WebElement> child=driver.findElements(By.xpath("//a[contains(text(),'Srikalahasthi Pipes')]/ancestor::tr/child::td"));
+		System.out.println("No of Child elements:" +child.size());
+		
+		//Ancestor  - Select all ancestors (parent,grandparent,etc..,)
+		
+		text=driver.findElement(By.xpath("//a[contains(text(),'Majesco L')]/ancestor::tr")).getText();
+		System.out.println(text);
+		
+		//Descendant  - Select all descendant(child,grandchild..etc..,)of the current node
+		
+		List<WebElement>listele=driver.findElements(By.xpath("//a[contains(text(),'Orient Refractories')]/ancestor::tr/descendant::*"));
+		System.out.println(listele.size());
+		
+		//Following - Selects everything in the document after the closing tag of thr current node
+		
+		List<WebElement>ele1=driver.findElements(By.xpath("//a[contains(text(),'Jain Irrigation')]/ancestor::tr/following::tr"));
+		System.out.println("No of following nodes are:"+ele1.size());
+		
+		//Following Sibling - Select all siblings after the current node
+		
+		List<WebElement>followingsiblings=driver.findElements(By.xpath("//a[contains(text(),'Jain Irrigation')]/ancestor::tr/following-sibling::tr"));
+		System.out.println("No of following siblings are:"+followingsiblings.size());
+		
+		//Preceding - select all nodes that appear before the current node in the document
+		
+		
+		List<WebElement>preceding=driver.findElements(By.xpath("//a[contains(text(),'Jain Irrigation')]/ancestor::tr/preceding::tr"));
+		System.out.println("No of preceding nodes are:"+preceding.size());
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		driver.close();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

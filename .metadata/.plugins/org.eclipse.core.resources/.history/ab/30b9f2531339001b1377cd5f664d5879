@@ -1,0 +1,51 @@
+package PART005.com.qa.HandlingCookies;
+
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.Cookie;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+//cookie  ===> it saves the files  temporary in browser
+
+public class Cookies {
+
+	public static void main(String[] args) {
+
+		
+		
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\Drivers\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.get("https://www.flipkart.com/");
+		Set<Cookie>cookies=driver.manage().getCookies();   //Capture all the cookies from the browser
+		//System.out.println(cookies.size());  //Print the size of cookie
+		
+		/*
+		 * for(Cookie cookie:cookies) //read and print all the cookies {
+		 * System.out.println(cookie.getName()+":"+cookie.getValue()); //print name and
+		 * values of the cookies }
+		 */
+		
+		//System.out.println(driver.manage().getCookieNamed("AMCV"));  //print specific cookie according to the cookie
+		//add new cookie to the browser
+		
+		Cookie cobj= new Cookie("Mycookie1234","123456789");
+		driver.manage().addCookie(cobj);
+		
+		cookies=driver.manage().getCookies();
+		System.out.println(cookies.size());
+		
+		for(Cookie cookie:cookies) //read and print all the cookies {
+			 System.out.println(cookie.getName()+":"+cookie.getValue()); //print name and  values of the cookies 
+			 
+	}
+		
+		
+		
+	}
+
+}

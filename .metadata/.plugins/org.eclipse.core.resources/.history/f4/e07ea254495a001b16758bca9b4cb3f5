@@ -1,0 +1,51 @@
+package com.qa.GooglesuggestionXpath;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class GoogleSugg_Xpath {
+
+	public static void main(String[] args) {
+
+		
+		
+		
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\Drivers\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		
+		driver.get("https://www.google.com/");
+		driver.findElement(By.name("q")).sendKeys("java");
+		//List <WebElement>listcount=driver.findElements(By.xpath("(//div[@class='UUbT9']//li/descendant::div[@class='sbl1']/span)[1]"));
+		List<WebElement> listcount=>driver.findElements(By.xpath("//div[@class='UUbT9']//li/descendant::div[@class='sbl1']/span"));
+		System.out.println(listcount.size());
+		
+		for(int i=0; i<listcount.size(); i++) {
+			
+			System.out.println(listcount.get(i).getText());
+			
+			if(listcount.get(i).getText().contains("java interview questions")) {
+				listcount.get(i).click();
+				break;
+			}
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

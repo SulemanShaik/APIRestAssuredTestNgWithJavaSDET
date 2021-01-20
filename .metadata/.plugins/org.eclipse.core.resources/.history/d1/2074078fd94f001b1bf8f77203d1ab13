@@ -1,0 +1,24 @@
+package PART0001.com.qa.handling_XpathFuntions_SDET;
+
+public class XpathAxes {
+
+	public static void main(String[] args) {
+
+		//Xpath Axes
+		
+		/*
+		 *  Self
+		 *  Parent 
+		 *  Child
+		 *   Ancestor
+		 *   Descendent 
+		 *   Following
+		 *   Following-sibiling
+		 *   Preceding
+		 *   Preceding-sibiling
+		 */
+		
+		
+	}
+
+}
